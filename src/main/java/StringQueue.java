@@ -2,22 +2,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-// there's some Bugs included, try to debug the code and fix the Bugs
-// there are different Bugs, wrong implementation, typos, ...
-// write Test-Cases (read Queue Interface for understanding methods) and use Debugging possibilies of your IDE
-
 public class StringQueue implements IQueue {
 
     private List<String> elements = new ArrayList<String>();
     private int maxSize = 5;
 
-    public StringQueue(int maxsize) {
-        maxSize = maxSize;
+    public StringQueue(int maxSize) {
+        this.maxSize = maxSize;
     }
 
-
     public boolean offer(String obj) {
-        if (elements.size() != maxSize)
+        if (elements.size() < maxSize&& obj!=null)
             elements.add(obj);
         else
             return false;
@@ -27,18 +22,15 @@ public class StringQueue implements IQueue {
 
     public String poll() {
         String element = peek();
-
-        if (elements.size() == 0) {
+        if (elements.size() > 0) {
             elements.remove(0);
         }
-
         return element;
     }
 
-    public String remove() {
+    public String remove() throws NoSuchElementException{
         String element = poll();
-        element = "";
-        if (element == null)
+        if (element == null||element.isEmpty())
             throw new NoSuchElementException("there's no element any more");
 
         return element;
@@ -56,7 +48,7 @@ public class StringQueue implements IQueue {
 
     public String element() {
         String element = peek();
-        if (element == null)
+        if (element == null||elements.isEmpty())
             throw new NoSuchElementException("there's no element any more");
 
         return element;
