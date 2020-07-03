@@ -7,9 +7,6 @@ import java.util.NoSuchElementException;
 class StringQueueTest {
     private static int testnmr = 1;
 
-    // TODO Write your own tests
-
-
     @BeforeEach
     public void setup() {
         System.out.println("Start unit "+testnmr);
@@ -54,7 +51,7 @@ class StringQueueTest {
     }
 
     @Test
-    @DisplayName("Testing method element")
+    @DisplayName("Testing methods element and remove")
     public void testingElement(){
         StringQueue sq= new StringQueue(4);
         sq.offer("1st");
