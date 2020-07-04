@@ -21,6 +21,10 @@ public class IntegerQueueTestGeneric {
         testnmr++;
     }
 
+    /**
+     * 1. Testing if the method offer() is adding Object to the queue.
+     * 2. Testing if the method peek() is showing the head of queue.
+     * */
     @Test
     @DisplayName("Testing method offer and peek with Object type of Integer ")
     public void testingOfferAndPeek() {
@@ -36,6 +40,11 @@ public class IntegerQueueTestGeneric {
         assertFalse(sq.offer(5));
     }
 
+    /**
+     * 1. Testing if the method offer() is adding Object to the queue.
+     * 2. Testing if the method peek() is showing the head of queue.
+     * 3. Testing if the method poll() is showing the head of the queue and if it deletes it.
+     * */
     @Test
     @DisplayName("Testing methods poll and peek ")
     public void testingPollAndPeek() {
@@ -53,6 +62,13 @@ public class IntegerQueueTestGeneric {
         assertNull(sq.peek());
     }
 
+    /**
+     * 1. Testing if the method offer() is adding Object to the queue.
+     * 2. Testing if the method element() is showing the head of queue.
+     *    and if it throws an exception when list is empty.
+     * 3. Testing if the method remove() is removing the head of the queue
+     *    and if it throws an exception when list is empty.
+     * */
     @Test
     @DisplayName("Testing methods element and remove")
     public void testingElement() {
@@ -67,6 +83,7 @@ public class IntegerQueueTestGeneric {
         assertEquals(sq.element(), 3);
         sq.remove();
         assertThrows(NoSuchElementException.class, () -> sq.element());
+        assertThrows(NoSuchElementException.class,()->sq.remove());
     }
 }
 

@@ -18,6 +18,10 @@ class StringQueueTest {
         testnmr++;
     }
 
+    /**
+     * 1. Testing if the method offer() is adding Object to the queue.
+     * 2. Testing if the method peek() is showing the head of queue.
+     * */
     @Test
     @DisplayName("Testing method offer and peek")
     public void testingOfferAndPeek() {
@@ -33,6 +37,11 @@ class StringQueueTest {
         assertFalse(sq.offer("5th"));
     }
 
+    /**
+     * 1. Testing if the method offer() is adding Object to the queue.
+     * 2. Testing if the method peek() is showing the head of queue.
+     * 3. Testing if the method poll() is showing the head of the queue and if it deletes it.
+     * */
     @Test
     @DisplayName("Testing methods poll and peek ")
     public void testingPollAndPeek() {
@@ -50,6 +59,13 @@ class StringQueueTest {
         assertNull(sq.peek());
     }
 
+     /**
+     * 1. Testing if the method offer() is adding Object to the queue.
+     * 2. Testing if the method element() is showing the head of queue.
+     *    and if it throws an exception when list is empty.
+     * 3. Testing if the method remove() is removing the head of the queue
+     *    and if it throws an exception when list is empty.
+     * */
     @Test
     @DisplayName("Testing methods element and remove")
     public void testingElement(){
@@ -64,5 +80,6 @@ class StringQueueTest {
         assertEquals(sq.element(),"3rd");
         sq.remove();
         assertThrows(NoSuchElementException.class,()->sq.element());
+        assertThrows(NoSuchElementException.class,()->sq.remove());
     }
 }
