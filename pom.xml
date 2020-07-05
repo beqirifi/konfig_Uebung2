@@ -21,7 +21,7 @@
             </roles>
             <timezone>Europe/Vienna</timezone>
             <properties>
-                <picUrl>https://avatars0.githubusercontent.com/u/62704035?s=400&v=4</picUrl>
+                <picUrl>https://avatars0.githubusercontent.com/u/62704035?s=400</picUrl>
             </properties>
         </developer>
     </developers>
@@ -52,8 +52,8 @@
         </dependency>
     </dependencies>
 	
-	
-	 <plugins>
+	<build>
+		<plugins>
             <!-- Compiler -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -78,5 +78,36 @@
                     <locales>de,en</locales>
                 </configuration>
             </plugin>
-	</plugins>
+			 <!-- Java documentation plugin for maven site documentation -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.2.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>3.1.0</version>
+            </plugin>
+		</plugins>
+	</build>
+	<reporting>
+        <plugins>
+            <!-- java doc support for maven site -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.2.0</version>
+                <reportSets>
+                    <!-- reports our javadocs in our src code and test code -->
+                    <reportSet>
+                        <reports>
+                            <report>javadoc</report>
+                            <report>test-javadoc</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>

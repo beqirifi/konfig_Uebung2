@@ -1,0 +1,16 @@
+Konfig Uebung2 - Queue
+
+    Was ist eine Queue?
+
+        * Deutsch: Warteschlange
+
+        * Prinzip: First come first serve
+
+        * Datenstruktur bei der das als erstes eingefügte Elemente, als Erstes für einen Prozess benutzt wird.
+
+
+    Wie kann man eine Queue testen?
+
+        * Beispiel 1: Man fügt mehrere Elemente in die Warteschlange. Mit der Abfrage welches Element als nächstes an der Reihe ist, muss das Element angezeigt werden, welches als Erstes in die Warteschlange eingefügt wurde.
+
+        * Beispiel 2: Nach dem entfernen eines Elementes, darf das Element, welches als Erstes eingefügt wurde, nicht mehr in der Warteschlange sein.

@@ -1,0 +1,9 @@
+<project name="Konfig_Uebung_Queue">
+    <publishDate position="right"/>
+    <version position="left"/>
+    <body>
+        <menu ref="reports" />
+        <menu ref="parent" />
+        <menu ref="modules" />
+    </body>
+</project>
