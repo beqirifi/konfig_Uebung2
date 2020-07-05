@@ -11,6 +11,7 @@ public class QueueGeneric<T> implements IQueueGeneric<T> {
         this.maxSize = maxSize; 
     }
 
+    @Override
     public boolean offer(T obj) {
         if (elements.size() < maxSize&& obj!=null) 
             elements.add(obj);
@@ -20,6 +21,7 @@ public class QueueGeneric<T> implements IQueueGeneric<T> {
         return true;
     }
 
+    @Override
     public T poll() {
         T element = peek();
         if (elements.size() > 0) { 
@@ -28,6 +30,7 @@ public class QueueGeneric<T> implements IQueueGeneric<T> {
         return element;
     }
 
+    @Override
     public T remove() throws NoSuchElementException{ 
         T element = poll();
         if (element == null)
@@ -36,6 +39,7 @@ public class QueueGeneric<T> implements IQueueGeneric<T> {
         return element;
     }
 
+    @Override
     public T peek() {
         T element;
         if (elements.size() > 0)
@@ -46,6 +50,7 @@ public class QueueGeneric<T> implements IQueueGeneric<T> {
         return element;
     }
 
+    @Override
     public T element() {
         T element = peek();
         if (element == null)
